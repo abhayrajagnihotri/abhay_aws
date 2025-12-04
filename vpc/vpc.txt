@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  # VPC
+  MyVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: '192.168.122.0/16'
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+        - Key: Name
+          Value: "MyVPC"
+          
+Outputs:
+  VPCId:
+    Description: "The ID of the VPC"
+    Value: !Ref MyVPC
